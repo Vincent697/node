@@ -1,0 +1,18 @@
+{
+  "name": "lesson6",
+  "version": "1.0.0",
+  "description": "lesson 6",
+  "main": "app.js",
+  "scripts": {
+    "test": "''\u001b[Dnode app.js"
+  },
+  "keywords": [
+    "''\u001b[Dnode",
+    "爬虫‘"
+  ],
+  "author": "Vincent",
+  "license": "ISC",
+  "dependencies": {
+    "should": "^11.1.1"
+  }
+}
