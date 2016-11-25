@@ -59,7 +59,7 @@ $ npm init # ..一阵乱填
 接着，编写 app.js
 
 ```js
-var express = require('express');
+var express = require('express');;
 
 // 与之前一样
 var fibonacci = function (n) {
