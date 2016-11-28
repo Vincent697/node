@@ -1,0 +1,19 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Vincent",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "should": "^11.1.1",
+    "supertest": "^2.0.1"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

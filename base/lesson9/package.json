@@ -1,0 +1,11 @@
+{
+  "name": "lesson9",
+  "version": "1.0.0",
+  "description": "Regular Expressions",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Vincent",
+  "license": "ISC"
+}
