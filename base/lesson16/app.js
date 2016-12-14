@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var app= express();
 
 app.listen(3000);
+console.log('server is running on port 3000！')
 
 //使用cookieParser 中间件，cookieParser(secret,options)
 //secret 是用来加密 cookie字符串（下面会提到 signedCookies）
