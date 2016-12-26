@@ -12,7 +12,7 @@ function printFileContent(fileName){
                 defer.resolve();
                 console.log("--------------分割线--------------");
             }else{
-                console.log(fileName+ 'is not exit');
+                console.log(fileName+ ' is not exit');
                 defer.resolve();
             }
         });
