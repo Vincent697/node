@@ -43,4 +43,72 @@ s.includes('Hello', 6) // false
 
 // 上面代码表示，使用第二个参数n时，endsWith的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束。
 
-// repeat() 方法返回一个新字符串，表示将元字
+// repeat() 方法返回一个新字符串，表示将原字符串重复n次
+
+'x'.repeat(3) //'xxx'
+'hello'.repeat(2) //'hellohello'
+'na'.repeat(0) // ''
+
+//参数如果是小数点，会被取整。
+'na'.repeat(2.9) // 'nana'
+
+// padStart(),padEnd()
+// ES7 推出了字符串补全长度的功能。如果某个字符串不够指定的长度，会在头部或者尾部补全，padStart() 用于头部补全，padEnd()用于尾部补全
+
+'x'.padStart(5, 'ab') // 'ababx'
+'x'.padStart(4, 'ab') // 'abax'
+
+'x'.padEnd(5, 'ab') // 'xabab'
+'x'.padEnd(4, 'ab') // 'xaba'
+
+
+// 模版字符串
+// 在ES6 引入了 模版字符串的概念
+
+// 传统写法
+$('#result').append(
+  'There are <b>' + basket.count + '</b> ' +
+  'items in your basket, ' +
+  '<em>' + basket.onSale +
+  '</em> are on sale!'
+);
+// ES6
+$('#result').append(`
+  There are <b>${basket.count}</b> items
+   in your basket, <em>${basket.onSale}</em>
+  are on sale!
+`); 
+
+
+//模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。
+
+// 普通字符串
+`In JavaScript '\n' is a line-feed.`
+
+// 多行字符串
+`In JavaScript this is
+ not legal.`
+
+console.log(`string text line 1
+string text line 2`);
+
+// 字符串中嵌入变量
+var name = "Bob", time = "today";
+`Hello ${name}, how are you ${time}?`
+
+
+// 如果使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中。
+
+$('#list').html(`
+<ul>
+  <li>first</li>
+  <li>second</li>
+</ul>
+`);
+
+$('#list').html(`
+<ul>
+  <li>first</li>
+  <li>second</li>
+</ul>
+`.trim());
