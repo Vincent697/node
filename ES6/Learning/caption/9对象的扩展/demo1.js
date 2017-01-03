@@ -149,3 +149,53 @@ const myObject = {
 // myObject // Object {[object Object]: "valueB"}
 // 
 // 上面代码中，[keyA]和[keyB]得到的都是[object Object]，所以[keyB]会把[keyA]覆盖掉，而myObject最后只有一个[object Object]属性。
+
+// 5. Object.assign() 用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）
+
+var target = { a: 1 };
+
+var source1 = { b: 2 };
+var source2 = { c: 3 };
+
+Object.assign(target, source1, source2);
+
+target // {a:1, b:2, c:3}
+
+// Object.assign 方法有很多用处
+
+// （1）为对象添加属性
+
+class Point {
+    constructor(x, y) {
+        Object.assign(this, { x, y });
+    }
+}
+
+// (2)为对象添加方法
+
+Object.assign(SomeClass.prototype, {
+    someMethod(arg1, arg2) {
+
+    },
+    anotherMethod() {
+
+    }
+});
+//等同于下面的写法
+SomeClass.prototype.someMethod = function(arg1, arg2) {
+
+};
+SomeClass.prototype.anotherMethod = function() {
+
+};
+
+// (3) 对象克隆
+function clone(origin) {
+    return Object.assign({}, origin);
+}
+// 采用这种方法克隆，只能克隆原始对象自身的值，不能克隆它继承的值，
+// 如果想要保持继承链，如下:
+function clone(origin) {
+    let originProto = Object.getProtoTypeOf(origin);
+    return Object.assign(Object.create(originProto), origin);
+}
