@@ -199,3 +199,41 @@ function clone(origin) {
     let originProto = Object.getProtoTypeOf(origin);
     return Object.assign(Object.create(originProto), origin);
 }
+（4）合并多个对象
+
+// 将多个对象合并到某个对象。
+
+const merge =
+  (target, ...sources) => Object.assign(target, ...sources);
+// 如果希望合并后返回一个新对象，可以改写上面函数，对一个空对象合并。
+
+const merge =
+  (...sources) => Object.assign({}, ...sources);
+
+
+// （5）为属性指定默认值
+
+const DEFAULTS = {
+  logLevel: 0,
+  outputFormat: 'html'
+};
+
+function processContent(options) {
+  options = Object.assign({}, DEFAULTS, options);
+}
+
+// (6)属性的可枚举性
+ 
+// 对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象。
+
+let obj = { foo: 123 };
+Object.getOwnPropertyDescriptor(obj, 'foo')
+//  {
+//    value: 123,
+//    writable: true,
+//    enumerable: true,
+//    configurable: true
+//  }
+// 描述对象的enumerable属性，称为”可枚举性“，如果该属性为false，就表示某些操作会忽略当前属性。
+
+
